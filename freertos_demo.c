@@ -261,7 +261,7 @@ void initI2C0(void)
    I2CMasterInitExpClk(I2C0_MASTER_BASE, SysCtlClockGet(), false);
 
    //clear I2C FIFOs
-   //HWREG(I2C0_MASTER_BASE + I2CO_FIFOCTL) = 80008000;
+   HWREG(I2C0_MASTER_BASE + I2CO_FIFOCTL) = 80008000;
 }
 
 uint8_t readI2C0(uint16_t device_address, uint16_t device_register)
